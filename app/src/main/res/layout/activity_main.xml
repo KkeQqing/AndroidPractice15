@@ -1,27 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center_horizontal"
     android:padding="16dp">
 
-    <!-- 视频播放控件 -->
+    <!-- 视频播放窗口 -->
     <VideoView
         android:id="@+id/videoView"
         android:layout_width="match_parent"
-        android:layout_height="240dp"
-        android:layout_marginBottom="16dp"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="20dp"/>
 
-    <!-- 进度条 -->
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        style="?android:attr/progressBarStyleHorizontal"/>
-
-    <!-- 控制按钮（去掉android:gap，改用margin实现间距） -->
+    <!-- 按钮控制区 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,32 +22,23 @@
         android:gravity="center">
 
         <Button
-            android:id="@+id/btn_play"
+            android:id="@+id/btnPlay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="播放"
-            />
+            android:layout_marginEnd="10dp"/>
 
         <Button
-            android:id="@+id/btn_pause"
+            android:id="@+id/btnPause"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="暂停"
-            />
+            android:layout_marginEnd="10dp"/>
 
         <Button
-            android:id="@+id/btn_stop"
+            android:id="@+id/btnStop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="停止"
-            />
-
-        <Button
-            android:id="@+id/btn_fullscreen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="全屏"
-            />
+            android:text="停止"/>
     </LinearLayout>
-
 </LinearLayout>
