@@ -1,44 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
-    android:padding="16dp">
 
-    <!-- 视频播放窗口 -->
+    android:orientation="vertical"
+
+    android:padding="10dp"
+
+    android:background="#000000">
+
+    <!-- VideoView -->
+
     <VideoView
         android:id="@+id/videoView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginBottom="20dp"/>
 
-    <!-- 按钮控制区 -->
+        android:layout_width="match_parent"
+
+        android:layout_height="0dp"
+
+        android:layout_weight="1"/>
+
+    <!-- 时间显示 -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:orientation="horizontal"
-        android:gravity="center">
+
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/tvCurrent"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="00:00"
+
+            android:textColor="#FFFFFF"
+
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text=" / "
+
+            android:textColor="#FFFFFF"/>
+
+        <TextView
+            android:id="@+id/tvTotal"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="00:00"
+
+            android:textColor="#FFFFFF"
+
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+    <!-- SeekBar -->
+
+    <SeekBar
+        android:id="@+id/seekBar"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"/>
+
+    <!-- 按钮区 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal"
+
+        android:gravity="center"
+
+        android:paddingTop="10dp">
+
+        <Button
+            android:id="@+id/btnBackward"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="快退"/>
 
         <Button
             android:id="@+id/btnPlay"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             android:text="播放"
-            android:layout_marginEnd="10dp"/>
+
+            android:layout_marginStart="5dp"/>
 
         <Button
             android:id="@+id/btnPause"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             android:text="暂停"
-            android:layout_marginEnd="10dp"/>
+
+            android:layout_marginStart="5dp"/>
 
         <Button
             android:id="@+id/btnStop"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="停止"/>
+
+            android:text="停止"
+
+            android:layout_marginStart="5dp"/>
+
+        <Button
+            android:id="@+id/btnForward"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="快进"
+
+            android:layout_marginStart="5dp"/>
     </LinearLayout>
+
 </LinearLayout>
