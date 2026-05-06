@@ -1,139 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:orientation="vertical"
-
     android:padding="10dp"
-
     android:background="#000000">
 
     <!-- VideoView -->
-
     <VideoView
         android:id="@+id/videoView"
-
         android:layout_width="match_parent"
-
         android:layout_height="0dp"
-
         android:layout_weight="1"/>
 
     <!-- 时间显示 -->
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:orientation="horizontal"
-
-        android:paddingTop="10dp">
+        android:paddingTop="10dp"
+        android:gravity="center">
 
         <TextView
             android:id="@+id/tvCurrent"
-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:text="00:00"
-
             android:textColor="#FFFFFF"
-
             android:textSize="16sp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:text=" / "
-
             android:textColor="#FFFFFF"/>
 
         <TextView
             android:id="@+id/tvTotal"
-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:text="00:00"
-
             android:textColor="#FFFFFF"
-
             android:textSize="16sp"/>
     </LinearLayout>
 
     <!-- SeekBar -->
-
     <SeekBar
         android:id="@+id/seekBar"
-
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"/>
 
-        android:layout_height="wrap_content"/>
-
-    <!-- 按钮区 -->
-
+    <!-- 按钮区（修复版：解决挤压问题） -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:orientation="horizontal"
-
         android:gravity="center"
-
-        android:paddingTop="10dp">
+        android:paddingTop="10dp"
+        android:weightSum="5">
 
         <Button
             android:id="@+id/btnBackward"
-
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-
+            android:layout_weight="1"
             android:text="快退"/>
+
+        <!-- 用Space做间隔，不影响按钮权重 -->
+        <Space
+            android:layout_width="4dp"
+            android:layout_height="wrap_content"/>
 
         <Button
             android:id="@+id/btnPlay"
-
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="播放"/>
 
-            android:text="播放"
-
-            android:layout_marginStart="5dp"/>
+        <Space
+            android:layout_width="4dp"
+            android:layout_height="wrap_content"/>
 
         <Button
             android:id="@+id/btnPause"
-
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="暂停"/>
 
-            android:text="暂停"
-
-            android:layout_marginStart="5dp"/>
+        <Space
+            android:layout_width="4dp"
+            android:layout_height="wrap_content"/>
 
         <Button
             android:id="@+id/btnStop"
-
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="停止"/>
 
-            android:text="停止"
-
-            android:layout_marginStart="5dp"/>
+        <Space
+            android:layout_width="4dp"
+            android:layout_height="wrap_content"/>
 
         <Button
             android:id="@+id/btnForward"
-
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-
-            android:text="快进"
-
-            android:layout_marginStart="5dp"/>
+            android:layout_weight="1"
+            android:text="快进"/>
     </LinearLayout>
 
 </LinearLayout>
